@@ -34,7 +34,7 @@ always @(posedge clk or posedge rst or posedge sz) begin
         fz <= 0; z_out <=0; counter <=0; start <=0;     
         end
 
-//if the start bit has not already been hit and sz goes high, its go time my G
+//if the start bit has not already been hit and sz goes high indicating multiplication is done, time to start shifting out
     else if (sz && !start && !fz) 
         start <= 1;
 
